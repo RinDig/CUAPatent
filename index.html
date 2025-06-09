@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constellations Reimagined: An AI-Powered Future</title>
+    <title>A Study of AI Visual Perception & Evaluation Methodologies</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet">
     <!-- 
     Narrative Plan:
-    1. Hook: Start with the core problem - the significant gap between AI and Human visual perception.
-    2. Context: Frame the opportunity within the booming AI patent and technology landscape.
-    3. Strategy: Detail our two primary strategic thrusts: Internal Innovation (improving our platform) and External Application (evaluating AI).
-    4. Use Cases: Break down the specific applications and highlight their value and patentability.
-    5. Action Plan: Conclude with clear, actionable recommendations for leadership (CEO and Patent Lawyer).
+    1. Introduction: Frame the core issue as a scientific inquiry into the difference between human and machine visual perception, citing the "Visual Data Report."
+    2. The Perception Gap: Present quantitative data showing the performance delta between humans and MLLMs on visual reasoning tasks.
+    3. Internal Methodologies: Detail the proposed AI-driven content generation systems as a framework for accelerating research on perception.
+    4. External Methodologies: Outline the concept of using visual tests to evaluate AI as a novel benchmarking framework.
+    5. Research Landscape: Contextualize the proposed methodologies within the broader AI patent and research ecosystem.
     
     Visualization Selection Justification:
-    - MLLM vs Human Performance: Goal: Compare. Choice: Bar Chart (Chart.js). Justification: Best for direct, clear comparison between different models and a human baseline. NO SVG.
-    - AI Patent Landscape: Goal: Inform. Choice: Donut Chart & Large Text Callouts. Justification: Donut chart is great for part-to-whole data (LLM patent share). Large numbers have high impact for key stats. NO SVG.
-    - Strategic Flows: Goal: Organize. Choice: HTML/CSS Flowchart. Justification: Clearly visualizes the steps in our internal and external processes. Built with styled divs and borders to strictly avoid SVG/Mermaid JS. NO SVG/MERMAID.
-    - Use Case Comparison: Goal: Compare. Choice: Radar Chart (Chart.js). Justification: An engaging way to compare our five key use cases across multiple dimensions like value and IP potential. NO SVG.
-    - Recommendations: Goal: Organize. Choice: Styled HTML List. Justification: Provides a clear, readable, and actionable summary for leadership. NO SVG.
-    
-    Color Palette Selection: "Brilliant Blues" (#00449E, #005CB9, #1976D2, #42A5F5, #90CAF9, #E3F2FD). Chosen for its professional, vibrant, and high-contrast aesthetic suitable for a corporate and legal audience.
+    - MLLM vs Human Performance: Goal: Compare. Choice: Bar Chart (Chart.js). Justification: Provides a direct, quantitative comparison of performance scores, ideal for highlighting the performance gap. NO SVG.
+    - Process Flows: Goal: Organize. Choice: HTML/CSS Flowchart. Justification: Clearly illustrates the sequential steps of the proposed internal and external methodologies using styled divs and borders to strictly avoid SVG/Mermaid JS. NO SVG/MERMAID.
+    - AI Patent Landscape: Goal: Inform. Choice: Donut Chart & Text. Justification: A donut chart effectively shows the proportional breakdown of patent filings, while large text callouts emphasize key statistics from the research. NO SVG.
+    - Use Case Analysis: Goal: Compare. Choice: Radar Chart (Chart.js). Justification: Allows for a multi-axial comparison of the different proposed applications against criteria like technical novelty and research impact. NO SVG.
+
+    Color Palette Selection: "Academic & Trustworthy" (inspired) - A palette using deep blues, grays, and a touch of gold/amber for highlighting, chosen to convey a sense of authority, rigor, and intellectual seriousness. The specific palette used: #0D1B2A (Dark Navy), #1B263B (Shadow Blue), #415A77 (Slate Gray), #778DA9 (Steel Blue), #E0E1DD (Light Gray/Paper), #FCA311 (Amber Highlight).
     
     Confirmation: NO SVG graphics or Mermaid JS were used in the creation of this document. All visualizations are rendered using HTML/CSS/Tailwind or the HTML5 Canvas element via Chart.js.
     -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #E3F2FD;
+            background-color: #E0E1DD;
+            color: #0D1B2A;
+        }
+        h1, h2, h3 {
+            font-family: 'Source Serif 4', serif;
         }
         .chart-container {
             position: relative;
@@ -42,61 +45,98 @@
             height: 400px;
             max-height: 50vh;
         }
-        .flow-arrow {
-            font-size: 2rem;
-            color: #1976D2;
-            line-height: 1;
-        }
         .flow-card {
-            background-color: white;
+            background-color: #1B263B;
+            color: #E0E1DD;
             border-radius: 0.5rem;
-            padding: 1.5rem;
+            padding: 1rem 1.5rem;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             text-align: center;
+            border: 1px solid #415A77;
             flex-grow: 1;
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            color: #415A77;
+            line-height: 1;
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="antialiased">
 
     <div class="container mx-auto p-4 md:p-8">
 
-        <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-6xl font-black text-[#00449E] mb-4">Constellations Reimagined</h1>
-            <p class="text-xl md:text-2xl text-[#005CB9] max-w-4xl mx-auto">My vision for pioneering the future of perception—for both humans and machines. This is our strategic blueprint for building a significant IP moat and a new market category.</p>
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#0D1B2A] mb-4">A Framework for Analyzing Human and Machine Visual Perception</h1>
+            <p class="text-lg text-[#415A77] max-w-4xl mx-auto">An overview of methodologies for leveraging and evaluating Artificial Intelligence in the context of visual reasoning, based on foundational studies of human perceptual frameworks.</p>
         </header>
 
-        <section id="opportunity" class="mb-20">
+        <section id="perception-gap" class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-[#00449E] mb-2">The AI Perception Gap: Our Core Opportunity</h2>
-                <p class="max-w-3xl mx-auto text-lg text-[#005CB9]">We've mastered how to measure human perception. Now, we have a groundbreaking opportunity to do the same for AI. Today's most advanced AI models don't "see" the world like we do. This gap isn't a flaw; it's a massive, untapped market for evaluation and training that we are uniquely positioned to capture.</p>
+                <h2 class="text-3xl font-bold text-[#0D1B2A] mb-2">The AI-Human Visual Reasoning Deficit</h2>
+                <p class="max-w-3xl mx-auto text-base text-[#415A77]">Initial research into visual data perception reveals that human interpretation is heavily guided by "structured, labeled information" and "the visual language of metadata."[1] When subjected to tests designed around these principles, current Multimodal Large Language Models (MLLMs) exhibit a significant performance gap compared to human baselines, particularly in complex reasoning tasks. This quantifiable deficit forms the basis for a new field of inquiry.</p>
             </div>
-            <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
-                <h3 class="text-xl font-bold text-center mb-4">AI vs. Human Visual Reasoning Performance (VisuLogic Benchmark)</h3>
-                <p class="text-center text-gray-600 mb-6">The data is clear: even top-tier AI models lag significantly behind human intuition in complex visual reasoning tasks. This is the deficit we can measure, analyze, and help solve.</p>
-                <div class="chart-container">
+            <div class="bg-white/50 rounded-lg shadow-lg p-6 md:p-8 backdrop-blur-sm">
+                <h3 class="text-xl font-semibold text-center mb-4">Comparative Performance on the VisuLogic Benchmark [4]</h3>
+                <p class="text-center text-gray-600 mb-6">The VisuLogic benchmark tests various facets of visual reasoning. Data shows a consistent and significant disparity between human accuracy and the performance of leading MLLMs, highlighting the immaturity of machine-based visual understanding.</p>
+                <div class="chart-container h-[450px] max-h-[60vh]">
                     <canvas id="performanceChart"></canvas>
                 </div>
             </div>
         </section>
 
-        <section id="market" class="mb-20">
+        <section id="methodologies" class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-[#00449E] mb-2">The Exploding AI Landscape</h2>
-                <p class="max-w-3xl mx-auto text-lg text-[#005CB9]">We're not just building in a vacuum; we're stepping into a booming market. The pace of innovation is staggering, which means a strong, defensible intellectual property strategy is not just important—it's essential for our long-term success.</p>
+                <h2 class="text-3xl font-bold text-[#0D1B2A] mb-2">Proposed Methodologies for Investigation</h2>
+                <p class="max-w-3xl mx-auto text-base text-[#415A77]">Two parallel methodological frameworks are proposed. The first focuses on internal process enhancement to accelerate research, while the second outlines an external framework for the novel evaluation of AI systems.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white/50 p-8 rounded-lg shadow-lg backdrop-blur-sm">
+                    <h3 class="text-2xl font-semibold text-center mb-6 text-[#1B263B]">Internal Framework: Automated Test Generation</h3>
+                    <p class="text-center text-gray-600 mb-8">This framework outlines a system for automating the creation of visual perception tests. It draws on principles from automated survey generation [20, 21] and multi-agent systems [19] to translate high-level research concepts into structured, testable stimuli.</p>
+                    <div class="flex flex-col items-stretch justify-center gap-4">
+                        <div class="flow-card">1. Conceptual Prompt</div>
+                        <div class="flow-arrow self-center rotate-90">↓</div>
+                        <div class="flow-card">2. Multi-Agent Deconstruction & Content Generation</div>
+                        <div class="flow-arrow self-center rotate-90">↓</div>
+                        <div class="flow-card">3. Automated Assembly of Visual Test</div>
+                        <div class="flow-arrow self-center rotate-90">↓</div>
+                        <div class="flow-card">4. Human Expert Review & Validation</div>
+                    </div>
+                </div>
+                <div class="bg-white/50 p-8 rounded-lg shadow-lg backdrop-blur-sm">
+                    <h3 class="text-2xl font-semibold text-center mb-6 text-[#1B263B]">External Framework: AI Model as a Test Subject</h3>
+                    <p class="text-center text-gray-600 mb-8">This novel framework proposes using MLLMs as participants in human-calibrated visual tests. The objective is to benchmark AI perception against human data, assess inherent biases, and generate perceptually-grounded training datasets. This addresses a critical gap in current AI evaluation [2, 4].</p>
+                     <div class="flex flex-col items-stretch justify-center gap-4">
+                        <div class="flow-card">1. MLLM Takes Human-Calibrated Visual Test</div>
+                        <div class="flow-arrow self-center rotate-90">↓</div>
+                        <div class="flow-card">2. Response Comparison (AI vs. Human Data)</div>
+                        <div class="flow-arrow self-center rotate-90">↓</div>
+                        <div class="flow-card">3. Identification of Perceptual Biases & Deviations</div>
+                        <div class="flow-arrow self-center rotate-90">↓</div>
+                        <div class="flow-card">4. Generation of Perceptually-Grounded Training Data</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="landscape" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#0D1B2A] mb-2">The Current AI Research & IP Landscape</h2>
+                <p class="max-w-3xl mx-auto text-base text-[#415A77]">The proposed methodologies are situated within a rapidly expanding and competitive field. Patent filings related to AI have grown exponentially [24, 25], with Generative AI and LLMs being dominant areas of focus. Understanding this context is critical for identifying genuinely novel contributions.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-xl p-8 flex flex-col justify-center items-center text-center">
-                    <span class="text-6xl font-black text-[#1976D2]">340,000+</span>
-                    <p class="text-lg mt-2 font-semibold">AI patent applications filed globally by 2023, signaling a fiercely competitive IP landscape.</p>
+                <div class="bg-white/50 rounded-lg shadow-lg p-8 flex flex-col justify-center items-center text-center backdrop-blur-sm">
+                    <span class="text-5xl font-bold text-[#FCA311]">340,000+</span>
+                    <p class="text-md mt-2 font-medium text-[#1B263B]">AI patent applications filed globally by 2023, indicating intense research and development activity [24].</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-xl p-8 flex flex-col justify-center items-center text-center">
-                    <span class="text-6xl font-black text-[#1976D2]">60%</span>
-                    <p class="text-lg mt-2 font-semibold">of data for AI will be synthetic by 2024 (Gartner), a market we can supply with our unique, perceptually-grounded data.</p>
+                <div class="bg-white/50 rounded-lg shadow-lg p-8 flex flex-col justify-center items-center text-center backdrop-blur-sm">
+                    <span class="text-5xl font-bold text-[#FCA311]">60%</span>
+                    <p class="text-md mt-2 font-medium text-[#1B263B]">Projected portion of AI data that will be synthetic by 2024, highlighting the need for high-quality, nuanced training data [34].</p>
                 </div>
-                 <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 lg:col-span-1 md:col-span-2">
-                    <h3 class="text-xl font-bold text-center mb-4">LLMs Dominate AI Patents (2022)</h3>
-                    <p class="text-center text-gray-600 mb-6">Our focus on Multimodal LLMs is perfectly timed. They represent the largest and fastest-growing segment of AI model patents.</p>
+                 <div class="bg-white/50 rounded-lg shadow-lg p-6 md:p-8 lg:col-span-1 md:col-span-2 backdrop-blur-sm">
+                    <h3 class="text-xl font-semibold text-center mb-4">LLM-related Patent Focus (2022) [24]</h3>
+                    <p class="text-center text-gray-600 mb-6">A significant portion of AI model patents relate to LLMs, the core technology underlying the proposed frameworks.</p>
                     <div class="chart-container h-64 max-h-[30vh]">
                         <canvas id="patentDonutChart"></canvas>
                     </div>
@@ -104,103 +144,24 @@
             </div>
         </section>
         
-        <section id="strategy" class="mb-20">
+        <section id="applications" class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-[#00449E] mb-2">My Two-Pronged Strategy for Market Leadership</h2>
-                <p class="max-w-3xl mx-auto text-lg text-[#005CB9]">Our path forward is a powerful flywheel. We'll use AI to revolutionize our internal processes, and in parallel, we'll launch an external-facing business to evaluate the AIs that will shape our future.</p>
+                <h2 class="text-3xl font-bold text-[#0D1B2A] mb-2">A Multi-faceted Analysis of Research Applications</h2>
+                <p class="max-w-3xl mx-auto text-base text-[#415A77]">The proposed frameworks yield several distinct research applications. A comparative analysis highlights their relative novelty and potential impact on the field of AI evaluation and development.</p>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold text-center mb-6 text-[#005CB9]">Internal Innovation: The "Prompt-to-Test" Engine</h3>
-                    <p class="text-center text-gray-600 mb-8">This is about making us faster, smarter, and more creative. We'll build an AI system that can design entire visual perception tests from a single high-level prompt, dramatically accelerating our R&D and product development.</p>
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                        <div class="flow-card">💡<br>High-Level Prompt</div>
-                        <div class="flow-arrow md:rotate-0 rotate-90">→</div>
-                        <div class="flow-card">🤖<br>AI Generates Content</div>
-                        <div class="flow-arrow md:rotate-0 rotate-90">→</div>
-                        <div class="flow-card">🧩<br>AI Assembles Test</div>
-                        <div class="flow-arrow md:rotate-0 rotate-90">→</div>
-                        <div class="flow-card">👩‍💻<br>Human Review</div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-center mb-6 text-[#005CB9]">External Opportunity: The "AI Test-Taker" Service</h3>
-                    <p class="text-center text-gray-600 mb-8">This is our new frontier. We'll create pipelines where AI models take our visual tests, allowing us to benchmark their abilities, uncover hidden biases, and generate unparalleled training data for the entire industry.</p>
-                     <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                        <div class="flow-card">🧠<br>AI Takes Our Test</div>
-                        <div class="flow-arrow md:rotate-0 rotate-90">→</div>
-                        <div class="flow-card">📊<br>Compare to Human Data</div>
-                        <div class="flow-arrow md:rotate-0 rotate-90">→</div>
-                        <div class="flow-card">🎯<br>Identify Bias & Gaps</div>
-                        <div class="flow-arrow md:rotate-0 rotate-90">→</div>
-                        <div class="flow-card">💾<br>Create Novel Training Data</div>
-                    </div>
+            <div class="bg-white/50 rounded-lg shadow-lg p-6 md:p-8 backdrop-blur-sm">
+                 <h3 class="text-xl font-semibold text-center mb-4">Analysis of Research Application Potential</h3>
+                 <p class="text-center text-gray-600 mb-6">Each application is evaluated based on its technical novelty, potential for generating high-impact data, and feasibility with current technology. External evaluation frameworks demonstrate particularly high potential for novel contributions.</p>
+                <div class="chart-container h-[450px] max-h-[60vh]">
+                    <canvas id="applicationsRadar"></canvas>
                 </div>
             </div>
         </section>
 
-        <section id="usecases" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-[#00449E] mb-2">Our Five Pillars of Innovation</h2>
-                <p class="max-w-3xl mx-auto text-lg text-[#005CB9]">These are the specific applications that form the foundation of our strategy. Each one represents a distinct value proposition and a strong opportunity for intellectual property protection.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
-                    <h3 class="text-xl font-bold text-center mb-4">Comparative Analysis of Strategic Value</h3>
-                    <p class="text-center text-gray-600 mb-6">This shows how our proposed use cases stack up across key business and technical dimensions. Our external-facing applications show particularly strong potential for creating a new, high-value market category.</p>
-                    <div class="chart-container h-[450px] max-h-[60vh]">
-                        <canvas id="useCasesRadar"></canvas>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h4 class="font-bold text-lg text-[#00449E]">AI Content Generation</h4>
-                        <p class="text-sm">Using AI to create diverse visual and text stimuli for our tests, boosting our creative capacity.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h4 class="font-bold text-lg text-[#00449E]">"Prompt-to-Test" Construction</h4>
-                        <p class="text-sm">A multi-agent AI system that designs full tests from a single command.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h4 class="font-bold text-lg text-[#00449E]">AI Model Benchmarking</h4>
-                        <p class="text-sm">Our flagship external service to evaluate and score AI visual reasoning against human perception.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6">
-                        <h4 class="font-bold text-lg text-[#00449E]">AI Bias Assessment</h4>
-                        <p class="text-sm">Using our tests to systematically uncover and report on hidden demographic and cultural biases in AI models.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-6 sm:col-span-2">
-                        <h4 class="font-bold text-lg text-[#00449E]">Perceptual Training Data Generation</h4>
-                        <p class="text-sm">Creating and licensing unique, high-value datasets born from our AI vs. Human analysis to train the next generation of AI.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="actionplan">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-[#00449E] mb-2">My Proposed Path Forward</h2>
-                <p class="max-w-3xl mx-auto text-lg text-[#005CB9]">This vision requires decisive action. Here is what I believe we need to do to seize this opportunity and build a defensible market lead.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[#005CB9] text-white rounded-lg shadow-xl p-8">
-                    <h3 class="text-2xl font-bold border-b-2 border-[#90CAF9] pb-2 mb-4">For Our CEO: Strategic Execution</h4>
-                    <ul class="list-disc list-inside space-y-3 text-lg">
-                        <li><strong>Prioritize R&D:</strong> Greenlight pilot programs for the "AI Test-Taker" concept immediately. This is our fastest path to a unique market position.</li>
-                        <li><strong>Build the Flywheel:</strong> Initiate phased development of our internal AI tools, starting with content generation to score quick wins on efficiency.</li>
-                        <li><strong>Forge Partnerships:</strong> Begin outreach to AI developers and labs. They need better evaluation tools, and we will be the ones to provide them.</li>
-                    </ul>
-                </div>
-                <div class="bg-[#005CB9] text-white rounded-lg shadow-xl p-8">
-                    <h3 class="text-2xl font-bold border-b-2 border-[#90CAF9] pb-2 mb-4">For Our Patent Lawyer: IP Protection</h4>
-                    <ul class="list-disc list-inside space-y-3 text-lg">
-                        <li><strong>Focus on Methodologies:</strong> Aggressively pursue patents on our unique *methods* for evaluating AI models using a human-perception framework.</li>
-                        <li><strong>Protect the Architecture:</strong> File patents covering the architecture of our "Prompt-to-Test" multi-agent system.</li>
-                        <li><strong>Conduct Diligent Search:</strong> A comprehensive prior art search is critical to navigate the crowded AI patent space and fortify our claims.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <footer class="text-center text-sm text-[#415A77] mt-16">
+            <p>This document provides a conceptual overview based on data from cited sources. All methodologies require further empirical validation.</p>
+            <p>References available in the full research report.</p>
+        </footer>
 
     </div>
 
@@ -233,13 +194,13 @@
             return label;
         };
         
-        const brilliantBlues = {
-            darkest: '#00449E',
-            dark: '#005CB9',
-            medium: '#1976D2',
-            light: '#42A5F5',
-            lightest: '#90CAF9',
-            background: '#E3F2FD'
+        const academicPalette = {
+            darkNavy: '#0D1B2A',
+            shadowBlue: '#1B263B',
+            slateGray: '#415A77',
+            steelBlue: '#778DA9',
+            lightGray: '#E0E1DD',
+            amberHighlight: '#FCA311'
         };
 
         const createPerformanceBarChart = () => {
@@ -247,19 +208,19 @@
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Human Baseline', 'Seed1.5-VL', 'InternVL2.5', 'OpenAI GPT-4V', 'Gemini Pro', 'GPT-4o'],
+                    labels: ['Human Baseline', 'GPT-4o', 'InternVL2.5', 'OpenAI GPT-4V', 'Gemini Pro', 'Seed1.5-VL'],
                     datasets: [{
                         label: 'Overall Performance (%)',
-                        data: [51.4, 35.0, 31.1, 29.5, 28.0, 26.3],
+                        data: [51.4, 26.3, 31.1, 29.5, 28.0, 35.0],
                         backgroundColor: [
-                            brilliantBlues.darkest,
-                            brilliantBlues.light,
-                            brilliantBlues.light,
-                            brilliantBlues.light,
-                            brilliantBlues.light,
-                            brilliantBlues.light,
+                            academicPalette.amberHighlight,
+                            academicPalette.slateGray,
+                            academicPalette.slateGray,
+                            academicPalette.slateGray,
+                            academicPalette.slateGray,
+                            academicPalette.slateGray,
                         ],
-                        borderColor: brilliantBlues.dark,
+                        borderColor: academicPalette.darkNavy,
                         borderWidth: 1
                     }]
                 },
@@ -270,19 +231,18 @@
                     scales: {
                         x: {
                             beginAtZero: true,
-                            title: { display: true, text: 'Accuracy (%)', font: { size: 14 } },
-                            ticks: { color: brilliantBlues.darkest }
+                            max: 80,
+                            title: { display: true, text: 'Accuracy (%)', font: { size: 14, family: 'Inter' }, color: academicPalette.darkNavy },
+                            ticks: { color: academicPalette.darkNavy }
                         },
                         y: {
-                            ticks: { color: brilliantBlues.darkest, font: { size: 12 } }
+                            ticks: { color: academicPalette.darkNavy, font: { size: 12, family: 'Inter' } }
                         }
                     },
                     plugins: {
                         legend: { display: false },
                         tooltip: {
-                            callbacks: {
-                                title: tooltipTitleCallback
-                            }
+                            callbacks: { title: tooltipTitleCallback }
                         }
                     }
                 }
@@ -297,8 +257,8 @@
                     labels: ['LLM-related Patents', 'Other AI Model Patents'],
                     datasets: [{
                         data: [40, 60],
-                        backgroundColor: [brilliantBlues.dark, brilliantBlues.lightest],
-                        borderColor: [brilliantBlues.darkest, brilliantBlues.light],
+                        backgroundColor: [academicPalette.shadowBlue, academicPalette.steelBlue],
+                        borderColor: [academicPalette.darkNavy, academicPalette.slateGray],
                         borderWidth: 2,
                         hoverOffset: 4
                     }]
@@ -310,50 +270,42 @@
                         legend: {
                             position: 'bottom',
                             labels: {
-                                color: brilliantBlues.darkest,
-                                font: { size: 12 }
+                                color: academicPalette.darkNavy,
+                                font: { size: 12, family: 'Inter' }
                             }
                         },
-                        tooltip: {
-                            callbacks: {
-                                title: tooltipTitleCallback
-                            }
-                        }
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
                     }
                 }
             });
         };
 
-        const createUseCasesRadarChart = () => {
-            const ctx = document.getElementById('useCasesRadar').getContext('2d');
+        const createApplicationsRadarChart = () => {
+            const ctx = document.getElementById('applicationsRadar').getContext('2d');
             const data = {
                 labels: [
-                    'AI Content Gen', 
+                    wrapLabel('AI Content Generation'), 
                     wrapLabel('Prompt-to-Test Construction'), 
                     wrapLabel('AI Model Benchmarking'), 
                     wrapLabel('AI Bias Assessment'), 
                     wrapLabel('Perceptual Training Data Gen')
                 ],
                 datasets: [{
-                    label: 'Strategic Value',
-                    data: [7, 8, 10, 9, 10],
+                    label: 'Technical Novelty',
+                    data: [5, 8, 9, 8, 7],
                     fill: true,
-                    backgroundColor: 'rgba(25, 118, 210, 0.2)',
-                    borderColor: brilliantBlues.medium,
-                    pointBackgroundColor: brilliantBlues.medium,
+                    backgroundColor: 'rgba(252, 163, 17, 0.2)',
+                    borderColor: academicPalette.amberHighlight,
+                    pointBackgroundColor: academicPalette.amberHighlight,
                     pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: brilliantBlues.medium
                 }, {
-                    label: 'IP Potential',
-                    data: [6, 9, 10, 9, 8],
+                    label: 'Research Impact',
+                    data: [4, 6, 10, 9, 9],
                     fill: true,
-                    backgroundColor: 'rgba(0, 68, 158, 0.2)',
-                    borderColor: brilliantBlues.darkest,
-                    pointBackgroundColor: brilliantBlues.darkest,
+                    backgroundColor: 'rgba(65, 90, 119, 0.2)',
+                    borderColor: academicPalette.slateGray,
+                    pointBackgroundColor: academicPalette.slateGray,
                     pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: brilliantBlues.darkest
                 }]
             };
 
@@ -363,38 +315,30 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    elements: {
-                        line: {
-                            borderWidth: 3
-                        }
-                    },
+                    elements: { line: { borderWidth: 3 } },
                     scales: {
                         r: {
-                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
-                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            angleLines: { color: 'rgba(13, 27, 42, 0.1)' },
+                            grid: { color: 'rgba(13, 27, 42, 0.1)' },
                             pointLabels: { 
-                                font: { size: 12 },
-                                color: brilliantBlues.darkest
+                                font: { size: 12, family: 'Inter' },
+                                color: academicPalette.darkNavy
                             },
                             ticks: {
                                 backdropColor: 'rgba(255, 255, 255, 0.75)',
-                                color: brilliantBlues.dark
+                                color: academicPalette.shadowBlue
                             },
                             suggestedMin: 0,
                             suggestedMax: 10
                         }
                     },
                     plugins: {
-                        tooltip: {
-                            callbacks: {
-                                title: tooltipTitleCallback
-                            }
-                        },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } },
                         legend: {
                            position: 'bottom',
                             labels: {
-                                color: brilliantBlues.darkest,
-                                font: { size: 14 }
+                                color: academicPalette.darkNavy,
+                                font: { size: 14, family: 'Inter' }
                             }
                         }
                     }
@@ -405,7 +349,7 @@
         window.onload = function () {
             createPerformanceBarChart();
             createPatentDonutChart();
-            createUseCasesRadarChart();
+            createApplicationsRadarChart();
         };
 
     </script>
